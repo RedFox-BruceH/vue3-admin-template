@@ -1,8 +1,13 @@
 import { createApp } from 'vue'
-import './style.css'
-import pinia from 'pinia'
-import Plugin from './plugins'
-
 import App from './App.vue'
 
-createApp(App).use(pinia).use(Plugin).mount('#app')
+import pinia from './pinia'
+import router from './router'
+import plugins from './plugins'
+
+import '@/style/index.scss'
+
+// 路由校验
+import './permission'
+
+createApp(App).use(pinia).use(router).use(plugins).mount('#app')
